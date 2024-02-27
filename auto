@@ -1,0 +1,28 @@
+local LocalPlayer = game.Players.LocalPlayer
+
+game:GetService('RunService'):BindToRenderStep("Inf-Armor", 0 , function()
+    if LocalPlayer.Character.BodyEffects.Armor.Value == 0 then
+        function Buy()
+        local Position = LocalPlayer.Character.HumanoidRootPart.Position
+            LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Ignored.Shop["[High-Medium Armor] - $2440"].Head.CFrame + Vector3.new(0, 3, 0)
+            if (LocalPlayer.Character.HumanoidRootPart.Position - game.Workspace.Ignored.Shop["[High-Medium Armor] - $2440"].Head.Position).Magnitude <= 50 then
+                wait(0.2)
+                fireclickdetector(game.Workspace.Ignored.Shop["[High-Medium Armor] - $2440"].ClickDetector, 4)
+                wait()
+                LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Position)
+            end
+
+            if LocalPlayer.Character.BodyEffects.Armor.Value <= 0 then
+                LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Ignored.Shop["[High-Medium Armor] - $2440"].Head.CFrame + Vector3.new(0, 3, 0)
+                if (LocalPlayer.Character.HumanoidRootPart.Position - game.Workspace.Ignored.Shop["[High-Medium Armor] - $2440"].Head.Position).Magnitude <= 50 then
+                    wait(0.2)
+                    fireclickdetector(game.Workspace.Ignored.Shop["[High-Medium Armor] - $2440"].ClickDetector, 4)
+                    wait()
+                    LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Position)
+                end
+            end
+        end
+
+        Buy()
+    end
+end)
