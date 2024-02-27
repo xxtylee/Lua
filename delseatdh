@@ -1,0 +1,5 @@
+for d, e in pairs(game.Workspace:GetDescendants()) do
+    if e:IsA("Seat") then
+        e:Destroy()
+    end
+end
