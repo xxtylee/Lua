@@ -1,0 +1,26 @@
+local gayniggerdie = game.Players.LocalPlayer
+local gayniggertp = game.Players.LocalPlayer.Character.HumanoidRootPart
+
+local connection
+
+local function niggaiux(model)
+    wait(0.1)
+
+    if model.Name == "Model" then
+        local launcher = model:FindFirstChild("Launcher")
+        if launcher then
+            local distance = (launcher.Position - gayniggerdie.Character.HumanoidRootPart.Position).Magnitude
+            if distance < 10 then
+                local niggersaveposomg = game.Players.LocalPlayer.Character.UpperTorso.Position
+                wait(0.1)
+                gayniggertp.CFrame = CFrame.new(-548, 173, 1)
+                wait(2)
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(niggersaveposomg)
+                
+                connection:Disconnect()
+            end
+        end
+    end
+end
+
+connection = game.Workspace.Ignored.ChildAdded:Connect(niggaiux)
