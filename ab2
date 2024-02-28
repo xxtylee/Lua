@@ -1,0 +1,11 @@
+game:GetService("Players").PlayerAdded:Connect(function(Player)
+    if Player:WaitForChild("Backpack"):FindFirstChild("AdminBan") then
+        game:GetService("Players").LocalPlayer:Kick("Admin has joined the server.")
+    end
+end)
+
+for i,v in pairs(game:GetService("Players"):GetPlayers()) do
+    if v and v:WaitForChild("Backpack"):FindFirstChild("AdminBan") then
+        game:GetService("Players").LocalPlayer:Kick("Admin was in the server.")
+    end
+end
