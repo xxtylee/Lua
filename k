@@ -4,8 +4,8 @@ repeat
  until game:IsLoaded()
 
 -- Menu/UI Creation
-if not isfile("Quantum") then
-    makefolder("Quantum")
+if not isfile("disguise") then
+    makefolder("disguise")
  end
  
  local menu = game:GetObjects("rbxassetid://18106889558")[1] 
@@ -286,14 +286,14 @@ if not isfile("Quantum") then
          local ping = string.format('%.0f', game.Stats.Network.ServerStatsItem["Data Ping"]:GetValue())
          local uid = "1"
          local fpsValue = string.split(game.Stats.Workspace.Heartbeat:GetValueString(), ".")[1]
-         WaterMarkLabel.Text = 'Quantum<font color="rgb(74, 74, 74)"></font> - uid: <font color="rgb(74, 74, 74)">' .. uid .. '</font> / fps: <font color="rgb(255, 255, 255)">' .. fpsValue .. '</font> / ping: <font color="rgb(255, 255, 255)">' .. ping .. '</font> / time: <font color="rgb(255, 255, 255)">' .. time .. '</font>'
+         WaterMarkLabel.Text = 'disguise<font color="rgb(74, 74, 74)"></font> - uid: <font color="rgb(74, 74, 74)">' .. uid .. '</font> / fps: <font color="rgb(255, 255, 255)">' .. fpsValue .. '</font> / ping: <font color="rgb(255, 255, 255)">' .. ping .. '</font> / time: <font color="rgb(255, 255, 255)">' .. time .. '</font>'
        end
     end)
     return Watermark
  end
  
  local library = {
-    Title = 'Quantum<font color="rgb(74, 74, 74)"></font> | Private',
+    Title = 'disguise<font color="rgb(74, 74, 74)"></font> | Private',
     keybind = Enum.KeyCode.RightBracket,
     Watermark = createWatermark(),
        Colors = {
@@ -345,13 +345,13 @@ if not isfile("Quantum") then
     
     menu.bg.Position = UDim2.new(0.5,-menu.bg.Size.X.Offset/2,0.5,-menu.bg.Size.Y.Offset/2)
     menu.Parent = CloneCore
-    menu.Name = "Quantum_gui"
+    menu.Name = "disguise_gui"
     local ProtectGui = protectgui or (syn and syn.protect_gui) or (function() end)
     local CloneScreenGui = cloneref(Instance.new("ScreenGui"))
     ProtectGui(CloneScreenGui)   
     CloneScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global
     CloneScreenGui.Parent = CloneCore
-    CloneScreenGui.Name = "Quantum_gui"
+    CloneScreenGui.Name = "disguise_gui"
 
     local TweenService = game:GetService("TweenService")
 
@@ -385,7 +385,7 @@ if not isfile("Quantum") then
         TextLabel.BorderSizePixel = 0
         TextLabel.Size = UDim2.new(0, 676, 0, 23)
         TextLabel.Font = Enum.Font.SourceSans
-        TextLabel.Text = "Quantum | #1"
+        TextLabel.Text = "disguise | #1"
         TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
         TextLabel.TextSize = 14.000
         
@@ -2334,7 +2334,7 @@ if not isfile("Quantum") then
                             if v == x then return true end
                             end return false end
                             function library:createConfig()
-                                makefolder("Quantum")
+                                makefolder("disguise")
                                 local name = library.flags["config_name"]
                                 if contains(library.options["config_box"].values, name) then return library:Notify(name..".cfg already exists!", 5) end
                                 if name == "" then return library:Notify("You need to put a name in!", 5) end
@@ -2346,14 +2346,14 @@ if not isfile("Quantum") then
                                 else jig[i] = v
                                 end
                             end
-                            writefile("Quantum/"..name..".cfg",game:GetService("HttpService"):JSONEncode(jig))
+                            writefile("disguise/"..name..".cfg",game:GetService("HttpService"):JSONEncode(jig))
                             library:Notify("Succesfully created config "..name..".cfg!", 5)
                             library:refreshConfigs()
                         end
 
                         function library:saveConfig()
                             pcall(function()
-                                makefolder("Quantum")
+                                makefolder("disguise")
                                 local name = library.flags["config_box"]
                                 if not name then
                                     return
@@ -2415,7 +2415,7 @@ if not isfile("Quantum") then
 
                 function library:refreshConfigs()
                     local tbl = {}
-                    for i,v in next, listfiles("Quantum") do table.insert(tbl,v) end
+                    for i,v in next, listfiles("disguise") do table.insert(tbl,v) end
                     library.options["config_box"].refresh(tbl)
                 end      
             end)()                         
