@@ -112,7 +112,7 @@ if not isfile("disguise") then
  Name.FontFace = Fonts.ProggyTiny
  Name.Text = "[<font color=\"rgb(255, 255, 255)\">Keybinds</font>]"
  Name.TextColor3 = Color3.fromRGB(255, 255, 255)
- Name.TextSize = 9
+ Name.TextSize = 11
  Name.RichText = true
  Name.BorderSizePixel = 1
  
@@ -774,7 +774,7 @@ if not isfile("disguise") then
                                 Name.Size = UDim2.new(1, 0, 1, 0)
                                 Name.FontFace = Fonts.ProggyTiny
                                 Name.TextColor3 = Color3.fromRGB(125, 125, 125)
-                                Name.TextSize = 9
+                                Name.TextSize = 11
                                 Name.RichText = true
                                 Name.Visible = false
 
